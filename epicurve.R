@@ -41,7 +41,7 @@ server <- function(input,output){
   output$epicurve <- renderPlot({hist(data()$onsettime,breaks=input$timeinter,freq=T,col="red",ann=F,xaxt="n");
                                 datetick <- seq(min(data()$onsettime),max(data()$onsettime),paste(input$timeinter,"day"));
                                 axis.Date(side=1,date,at=datetick,"%m-%d",las=3,pos=0);
-						                    title(xlab="Onsettime",ylab="Frequency",main="Epicurve")						
+                                title(xlab="Onsettime",ylab="Frequency",main="Epicurve")						
 					                      })
   
   # Display the histogram variable summary
