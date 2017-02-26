@@ -40,14 +40,15 @@ server <- function(input,output){
   # plot the histogram--epicurve
   output$epicurve <- renderPlot({hist(data()$onsettime,breaks=input$timeinter,freq=T,col="red",ann=F,xaxt="n");
                                 datetick <- seq(min(data()$onsettime),max(data()$onsettime),paste(input$timeinter,"day"));
-                                axis.Date(side=1,date,at=datetick,"%m-%d",las=3,pos=0)
-						title(xlab="Onsettime",ylab="Frequency",main="Epicurve")						
-					})
+                                axis.Date(side=1,date,at=datetick,"%m-%d",las=3,pos=0);
+						                    title(xlab="Onsettime",ylab="Frequency",main="Epicurve")						
+					                      })
   
   # Display the histogram variable summary
   output$stats <- renderPrint({summary(as.Date(data()$onsettime))})
   
-  output$filetable <- renderTable({head(data())}) #display the head rows
+  # Display the head rows
+  output$filetable <- renderTable({head(data())}) 
 }
 
 shinyApp(ui=ui,server=server)
