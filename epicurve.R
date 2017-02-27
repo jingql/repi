@@ -2,6 +2,7 @@
 # Description: "Use to descripitive statistics on infectious disease for primary public health workers"
 # Author: Jing Qinlong
 # Version: 2017.02.25
+# revise20170227
 
 
 library(shiny)
